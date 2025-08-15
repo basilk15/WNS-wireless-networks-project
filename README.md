@@ -104,6 +104,29 @@ Our analysis focuses on:
 - **Throughput optimization** metrics
 - **Channel adaptation** responsiveness
 
+## 📊 Results
+
+![BER vs. SNR: Static & Adaptive Modulation](RESULT.png)
+
+The plot above compares the **Bit Error Rate (BER)** performance of static modulation schemes (**QPSK**, **16-QAM**, and **64-QAM**) against the proposed **Adaptive Modulation** approach over an **AWGN channel**.
+
+### Key Observations
+- **Static Schemes**:
+  - QPSK maintains robustness at lower SNR values but offers lower throughput.
+  - 16-QAM and 64-QAM achieve higher throughput but suffer higher BER at low-to-medium SNRs.
+- **Adaptive Modulation**:
+  - At low SNR, the system selects **QPSK** to ensure reliability.
+  - At medium SNR, it switches to **16-QAM**, balancing throughput and BER.
+  - At high SNR, it utilizes **64-QAM** to maximize data rate with minimal BER.
+  - This dynamic switching results in **significantly lower BER across most SNR values** compared to any fixed scheme.
+
+### Conclusion
+Adaptive modulation **outperforms static modulation** by intelligently matching the modulation order to channel conditions, achieving:
+- **Lower BER** at critical SNR thresholds
+- **Higher throughput** without sacrificing reliability
+- **Better adaptability** to real-time channel variations
+
+
 ## 🔬 Technical Implementation
 
 ### AMC Controller Logic
